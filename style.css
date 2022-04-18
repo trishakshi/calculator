@@ -1,0 +1,324 @@
+@import url(https://fonts.googleapis.com/css?family=League+Spartan:100,200,300,regular,500,600,700,800,900);
+
+:root {
+  /* Backgrounds */
+
+  --main-bg: hsl(222, 26%, 31%); /* main background */
+  --toggle-bg: hsl(223, 31%, 20%); /* toggle background */
+  --keypad-bg: hsl(223, 31%, 20%); /* keypad background */
+  --screen-bg: hsl(224, 36%, 15%); /* screen background */
+
+  /* Keys */
+
+  --clear-bg: hsl(225, 21%, 49%); /**/
+  --clear-shadow: hsl(224, 28%, 35%); /**/
+
+  --result-bg: hsl(6, 63%, 50%); /**/
+  --indicator-bg: hsl(6, 63%, 50%);
+  --result-shadow: hsl(6, 70%, 34%); /**/
+
+  --keys-bg: hsl(30, 25%, 89%); /**/
+  --keys-shadow: hsl(28, 16%, 65%); /**/
+
+  /* Text */
+
+  --button-text-color: hsl(221, 14%, 31%); /**/
+  --white: hsl(0, 0%, 100%); /**/
+  --color: hsl(0, 0%, 100%);
+
+  --f-size: 32px; /* numbers */
+  --w-700: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "League Spartan";
+  transition: 0.5s;
+  background-color: var(--main-bg);
+  display: flex;
+  align-items: center;
+}
+
+input[type="button"] {
+  border: none;
+  text-transform: uppercase;
+}
+
+input[type="button"]:focus {
+  outline: none;
+}
+
+.theme-one {
+  background-color: var(--main-bg);
+}
+
+.theme-two {
+  /* Backgrounds */
+
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg: hsl(0, 5%, 81%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  /* Keys */
+
+  --clear-bg: hsl(185, 42%, 37%);
+  --clear-shadow: hsl(185, 58%, 25%);
+
+  --result-bg: hsl(25, 98%, 40%);
+  --indicator-bg: hsl(25, 98%, 40%);
+  --result-shadow: hsl(25, 99%, 27%);
+
+  --keys-bg: hsl(45, 7%, 89%);
+  --keys-shadow: hsl(35, 11%, 61%);
+
+  /* Text */
+
+  --button-text-color: hsl(60, 10%, 19%);
+  --color: hsl(60, 10%, 19%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.theme-three {
+  /* Backgrounds */
+
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg: hsl(268, 71%, 12%);
+  --keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  /* Keys */
+
+  --clear-bg: hsl(281, 89%, 26%);
+  --clear-shadow: hsl(285, 91%, 52%);
+
+  --result-bg: hsl(176, 100%, 44%);
+  --indicator-bg: hsl(176, 100%, 44%);
+  --result-shadow: hsl(177, 92%, 70%);
+
+  --keys-bg: hsl(268, 47%, 21%);
+  --keys-shadow: hsl(290, 70%, 36%);
+
+  /* Text */
+
+  --button-text-color: hsl(52, 100%, 62%);
+  --color: hsl(52, 100%, 62%);
+  --white: hsl(52, 100%, 62%);
+}
+
+.calculator {
+  height: 70vh;
+  width: 280px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 32px;
+  color: var(--color);
+}
+
+.toggle-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.toggle-text {
+  margin-right: 1em;
+  font-size: 10px;
+  color: var(--color);
+  font-weight: var(--w-700);
+  margin-bottom: 5px;
+}
+
+.toggle-box {
+  width: 60px;
+}
+
+.toggle-num {
+  display: flex;
+  justify-content: space-between;
+}
+
+.num {
+  font-size: 8px;
+  color: var(--color);
+  font-weight: var(--w-700);
+  padding: 0 5px;
+  transition: 0.5s;
+}
+
+#toggle {
+  position: relative;
+  background-color: var(--toggle-bg);
+  width: 100%;
+  height: 20px;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#toggle .indicator {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--indicator-bg);
+  border-radius: 50%;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+#toggle.option-one .indicator {
+  left: 0;
+}
+
+#toggle.option-two .indicator {
+  left: 20px;
+}
+
+#toggle.option-three .indicator {
+  left: 40px;
+}
+
+.calculator__screen {
+  width: 100%;
+  border: none;
+  background-color: var(--screen-bg);
+  border-radius: 8px;
+  font-size: 32px;
+  color: var(--color);
+  font-family: inherit;
+  padding: 0.7em;
+  text-align: right;
+  margin: 1em 0;
+  transition: 0.5s;
+  font-weight: var(--w-700);
+}
+
+.calculator__screen:focus {
+  outline: none;
+}
+
+.keypad {
+  background-color: var(--keypad-bg);
+  width: 100%;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.5em;
+  gap: 1em;
+  transition: 0.5s;
+}
+
+.key {
+  border-radius: 8px;
+  background-color: var(--keys-bg);
+  box-shadow: var(--keys-shadow);
+  font-size: 18px;
+  font-weight: var(--w-700);
+  color: var(--button-text-color);
+  transition: 0.5s;
+  padding: 0.5em 0;
+  cursor: pointer;
+}
+
+.clear {
+  background-color: var(--clear-bg);
+  box-shadow: var(--clear-shadow);
+  color: var(--white);
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+.reset {
+  background-color: var(--clear-bg);
+  box-shadow: var(--clear-shadow);
+  color: var(--white);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+.calculate {
+  border-radius: 8px;
+  background-color: var(--result-bg);
+  box-shadow: var(--result-shadow);
+  grid-column-start: 3;
+  grid-column-end: 5;
+  color: var(--white);
+  font-weight: var(--w-700);
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 22px;
+}
+
+.attribution {
+}
+
+@media screen and (min-width: 500px) {
+  .calculator {
+    width: 500px;
+  }
+
+  .logo {
+    font-size: 50px;
+  }
+
+  .toggle-box {
+    width: 90px;
+  }
+
+  .toggle-text {
+    font-size: 14px;
+  }
+
+  .num {
+    font-size: 10px;
+  }
+
+  #toggle {
+    height: 30px;
+  }
+
+  #toggle .indicator {
+    width: 30px;
+    height: 30px;
+  }
+
+  #toggle.option-two .indicator {
+    left: 30px;
+  }
+
+  #toggle.option-three .indicator {
+    left: 60px;
+  }
+
+  .key {
+    font-size: 32px;
+  }
+
+  .calculate {
+    font-size: 32px;
+  }
+
+  .clear {
+    font-size: 32px;
+  }
+
+  .reset {
+    font-size: 32px;
+  }
+}
